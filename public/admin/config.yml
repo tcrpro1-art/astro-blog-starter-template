@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: github.com/tcrpro1-art/astro-blog-starter-template # This links directly to your repository
+  repo: tcrpro1-art/astro-blog-starter-template # This links directly to your repository
   branch: main # Branch to update
 
 media_folder: "public/images" # Where your dragged-and-dropped photos get saved
