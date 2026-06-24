@@ -1,50 +1,112 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
-
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TJ & Kaitlin | Welcome</title>
+    <style>
+      :root {
+        --primary: #2c3e50;
+        --secondary: #e67e22;
+        --bg-light: #f8f9fa;
+        --text-dark: #333;
+        --text-light: #666;
+      }
+      body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.6; }
+      
+      /* Hero Section */
+      .hero { height: 80vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80') center/cover; padding: 0 20px; }
+      .hero-content { max-width: 800px; }
+      .hero h1 { font-size: 4rem; margin: 0 0 20px 0; letter-spacing: 2px; text-transform: uppercase; }
+      .hero p { font-size: 1.5rem; margin-bottom: 30px; font-weight: 300; }
+      
+      /* Buttons */
+      .btn { display: inline-block; padding: 15px 35px; background: var(--secondary); color: white; text-decoration: none; border-radius: 30px; font-size: 1.1rem; font-weight: bold; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+      .btn:hover { background: #d35400; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+      .btn-outline { background: transparent; border: 2px solid white; margin-left: 15px; }
+      .btn-outline:hover { background: white; color: var(--primary); }
+
+      /* Section Formatting */
+      .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+      .section-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; position: relative; display: inline-block; }
+      .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--secondary); }
+      .section-subtitle { color: var(--text-light); max-width: 700px; margin: 0 auto 50px auto; font-size: 1.2rem; }
+
+      /* Grid Features */
+      .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+      .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+      .card:hover { transform: translateY(-10px); }
+      .card img { width: 100%; height: 250px; object-fit: cover; }
+      .card-content { padding: 30px; text-align: left; }
+      .card h3 { margin: 0 0 15px 0; font-size: 1.5rem; color: var(--primary); }
+
+      /* Banner Quote */
+      .quote-banner { background: var(--primary); color: white; padding: 80px 20px; text-align: center; margin: 60px 0; }
+      .quote-banner h2 { font-size: 2.2rem; font-style: italic; font-weight: 300; max-width: 900px; margin: 0 auto; line-height: 1.4; }
+
+      /* Footer */
+      footer { background: #1a252f; color: white; text-align: center; padding: 40px 20px; margin-top: auto; }
+    </style>
+  </head>
+  <body>
+    
+    <header class="hero">
+      <div class="hero-content">
+        <h1>TJ & Kaitlin</h1>
+        <p>Documenting our journey, finding new trails, and capturing the moments that matter.</p>
+        <a href="/about" class="btn">Our Story</a>
+        <a href="/blog" class="btn btn-outline">Read the Blog</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Welcome to Our Corner</h2>
+      <p class="section-subtitle">We built this digital space to step away from the noise of social media and keep a personal scrapbook of our lives. From quiet weekends at home to stepping out of our comfort zones, this is where we share it all.</p>
+      
+      <div class="grid-3">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1504280390224-1065ea075196?auto=format&fit=crop&w=800&q=80" alt="Coffee and planning" />
+          <div class="card-content">
+            <h3>Everyday Life</h3>
+            <p>Finding the balance between our daily routines, new projects, and the simple moments that make life in the South Jersey area special.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80" alt="Hiking boots" />
+          <div class="card-content">
+            <h3>Our Adventures</h3>
+            <p>Whether it's exploring local trails, taking spontaneous road trips, or finding a new favorite spot, we love getting out there.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=800&q=80" alt="Camera lens" />
+          <div class="card-content">
+            <h3>The Blog</h3>
+            <p>Our thoughts, updates, and deep-dives into the things we are currently working on or enjoying. A true snapshot of our timeline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote-banner">
+      <h2>"Life is about the experiences we share and the memories we create along the way."</h2>
+    </div>
+
+    <section class="section">
+      <h2 class="section-title">Recent Snapshots</h2>
+      <p class="section-subtitle">A quick glimpse into what we've been up to lately.</p>
+      <div class="grid-3">
+        <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=800&q=80" alt="Camping" style="width:100%; border-radius:15px; height: 300px; object-fit: cover;" />
+        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80" alt="Hiking" style="width:100%; border-radius:15px; height: 300px; object-fit: cover;" />
+        <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80" alt="Travel" style="width:100%; border-radius:15px; height: 300px; object-fit: cover;" />
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 tjandkaitlin.com. Built from scratch.</p>
+    </footer>
+
+  </body>
 </html>
