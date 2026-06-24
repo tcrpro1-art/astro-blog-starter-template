@@ -16,8 +16,13 @@
       }
       body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.6; }
       
+      /* Navigation Bar */
+      nav { background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; }
+      nav a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 1.2rem; margin: 0 15px; transition: color 0.2s; }
+      nav a:hover { color: var(--secondary); }
+
       /* Hero Section */
-      .hero { height: 80vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80') center/cover; padding: 0 20px; }
+      .hero { height: 75vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80') center/cover; padding: 0 20px; }
       .hero-content { max-width: 800px; }
       .hero h1 { font-size: 4rem; margin: 0 0 20px 0; letter-spacing: 2px; text-transform: uppercase; }
       .hero p { font-size: 1.5rem; margin-bottom: 30px; font-weight: 300; }
@@ -29,22 +34,10 @@
       .btn-outline:hover { background: white; color: var(--primary); }
 
       /* Section Formatting */
-      .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+      .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
       .section-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; position: relative; display: inline-block; }
       .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--secondary); }
       .section-subtitle { color: var(--text-light); max-width: 700px; margin: 0 auto 50px auto; font-size: 1.2rem; }
-
-      /* Grid Features */
-      .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-      .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
-      .card:hover { transform: translateY(-10px); }
-      .card img { width: 100%; height: 250px; object-fit: cover; }
-      .card-content { padding: 30px; text-align: left; }
-      .card h3 { margin: 0 0 15px 0; font-size: 1.5rem; color: var(--primary); }
-
-      /* Banner Quote */
-      .quote-banner { background: var(--primary); color: white; padding: 80px 20px; text-align: center; margin: 60px 0; }
-      .quote-banner h2 { font-size: 2.2rem; font-style: italic; font-weight: 300; max-width: 900px; margin: 0 auto; line-height: 1.4; }
 
       /* Footer */
       footer { background: #1a252f; color: white; text-align: center; padding: 40px 20px; margin-top: auto; }
@@ -52,56 +45,24 @@
   </head>
   <body>
     
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/blog">Our Blog</a>
+    </nav>
+
     <header class="hero">
       <div class="hero-content">
         <h1>TJ & Kaitlin</h1>
         <p>Documenting our journey, finding new trails, and capturing the moments that matter.</p>
-        <a href="/about" class="btn">Our Story</a>
-        <a href="/blog" class="btn btn-outline">Read the Blog</a>
+        <a href="/blog" class="btn">Read the Blog</a>
+        <a href="/about" class="btn btn-outline">Our Story</a>
       </div>
     </header>
 
     <section class="section">
       <h2 class="section-title">Welcome to Our Corner</h2>
       <p class="section-subtitle">We built this digital space to step away from the noise of social media and keep a personal scrapbook of our lives. From quiet weekends at home to stepping out of our comfort zones, this is where we share it all.</p>
-      
-      <div class="grid-3">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1504280390224-1065ea075196?auto=format&fit=crop&w=800&q=80" alt="Coffee and planning" />
-          <div class="card-content">
-            <h3>Everyday Life</h3>
-            <p>Finding the balance between our daily routines, new projects, and the simple moments that make life in the South Jersey area special.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80" alt="Hiking boots" />
-          <div class="card-content">
-            <h3>Our Adventures</h3>
-            <p>Whether it's exploring local trails, taking spontaneous road trips, or finding a new favorite spot, we love getting out there.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=800&q=80" alt="Camera lens" />
-          <div class="card-content">
-            <h3>The Blog</h3>
-            <p>Our thoughts, updates, and deep-dives into the things we are currently working on or enjoying. A true snapshot of our timeline.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="quote-banner">
-      <h2>"Life is about the experiences we share and the memories we create along the way."</h2>
-    </div>
-
-    <section class="section">
-      <h2 class="section-title">Recent Snapshots</h2>
-      <p class="section-subtitle">A quick glimpse into what we've been up to lately.</p>
-      <div class="grid-3">
-        <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=800&q=80" alt="Camping" style="width:100%; border-radius:15px; height: 300px; object-fit: cover;" />
-        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80" alt="Hiking" style="width:100%; border-radius:15px; height: 300px; object-fit: cover;" />
-        <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80" alt="Travel" style="width:100%; border-radius:15px; height: 300px; object-fit: cover;" />
-      </div>
     </section>
 
     <footer>
