@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: tcrpro1/astro-blog-starter-template # This links directly to your repository
+  branch: main # Branch to update
+
+media_folder: "public/images" # Where your dragged-and-dropped photos get saved
+public_folder: "/images" # How the website links to those photos
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Publish Date", name: "pubDate", widget: "datetime"}
+      - {label: "Cover Image", name: "heroImage", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
